@@ -1,6 +1,10 @@
 const container = document.querySelector(".container");
 const input = document.querySelector("input");
 const button = document.querySelector(".button");
+const some = document.querySelectorAll("#logo path");
+for (let i = 0; i < some.length; i++) {
+    console.log(`Letter ${i+1} stroke-dasharray: ${some[i].getTotalLength()}px;`)
+}
 let user = [];
 const createProfile = (array) => {
     container.innerHTML = "";
