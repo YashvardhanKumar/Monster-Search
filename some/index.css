@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    /* background-color: blue; */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.heading {
+    border: 1px solid #000;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-size: x-large;
+    font-weight: bolder;
+    font-variant: small-caps;
+    background-color: aquamarine;
+}
+
+.container {
+    border: 1px solid #000;
+    display: grid;
+    padding: 20px;
+    justify-content: space-evenly;
+    align-content: center;
+    grid-template-rows: repeat(5, 400px);
+    grid-template-columns: repeat(2, 400px);
+    gap: 20px;
+    font-family: "Merriweather";
+}
+
+.profile {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    font-size: larger;
+    border-radius: 30px;
+}
+
+.name {
+    border: 1px solid #000;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 30px;
+    background-color: bisque;
+    background-color: khaki;
+}
+
+.title {
+    position: absolute;
+    width: 589px;
+    height: 98px;
+    left: 17px;
+    top: 0px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 60px;
+    line-height: 105px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    stroke-dasharray: 100px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.controls {
+    width: 25%;
+    position: relative;
+    height: 50px;
+    overflow: hidden;
+}
+
+.controls input {
+    width: 100%;
+    height: 100%;
+    padding-top: 15px;
+    border: none;
+    font-size: 20px;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    color: #595f6e;
+    bottom: 0px;
+}
+
+.controls label {
+    font-family: "Poppins";
+    font-weight: 600;
+    font-variant: small-caps;
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    border-bottom: 1px solid #000;
+    /* background: blue; */
+}
+
+.controls label::after {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: -1px;
+    height: 100%;
+    width: 100%;
+    border-bottom: 3px solid #5fa8d3;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.content {
+    position: absolute;
+    bottom: 5px;
+    left: 0px;
+    transition: all 0.3s ease;
+}
+
+.controls input:focus+.label-1 .content,
+.controls input:not(:placeholder-shown)+.label-1 .content {
+    transform: translateY(-130%);
+    font-size: 14px;
+    color: #5fa8d3;
+}
+
+.controls input:focus+.label-1::after,
+.controls input:not(:placeholder-shown)+.label-1::after {
+    transform: translateX(0%);
+}
