@@ -3,119 +3,134 @@
     margin: 0px;
     padding: 0px;
     /* background-color: blue; */
+    box-sizing: border-box;
 }
 
 body {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    /* justify-items: space-between; */
+    /* height: 100%; */
 }
 
 .heading {
-    border: 1px solid #000;
-    padding: 20px;
+    padding-bottom: 10px;
     display: flex;
-    justify-content: flex-end;
+    width: 100%;
+    height: 70px;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    /* align-items: center; */
+    /* grid-template-columns: 50% 50%; */
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     font-size: x-large;
     font-weight: bolder;
     font-variant: small-caps;
     background-color: aquamarine;
+    color: black;
+    top: 0px;
+    width: 100%;
+    background: rgba( 255, 255, 255, 0.3);
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37); */
+    backdrop-filter: blur( 4px);
 }
 
 .container {
-    border: 1px solid #000;
     display: grid;
-    padding: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     justify-content: space-evenly;
     align-content: center;
     grid-template-rows: repeat(5, 400px);
     grid-template-columns: repeat(2, 400px);
     gap: 20px;
     font-family: "Merriweather";
+    background: #8c80ac;
+    background-image: url("./qL9wz.png");
+    background-image: url("./pngtree-rocket-starry-sky-tiled-background-image_498050.jpg");
+    /* background-color: #094b65; */
+    /* position: sticky; */
+    /* background-image: radial-gradient(red, blue, green, pink) */
+}
+
+.back {
+    position: fixed;
 }
 
 .profile {
-    border: 1px solid #000;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    align-items: center;
     text-align: center;
     font-size: larger;
-    border-radius: 30px;
+    border-radius: 50px;
+    position: relative;
+    animation: make 0.3s ease-in-out;
+    background: rgba( 255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 6.0px);
+    -webkit-backdrop-filter: blur( 6.0px);
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
-.name {
-    border: 1px solid #000;
+.profile:hover {
+    transform: scale(1.05, 1.05);
+}
+
+@keyframes make {
+    0% {
+        background: rgba( 255, 255, 255, 0);
+        transform: scale(0.5, 0.5);
+        left: -60%;
+    }
+    50% {
+        background: rgba( 255, 255, 255, 0.35);
+        transform: scale(1.2, 0.5);
+    }
+    100% {
+        background: rgba( 255, 255, 255, 0.35);
+        transform: scale(1, 1);
+        left: 0%;
+    }
+}
+
+.name-content,
+.email-content {
     margin: 20px;
     display: flex;
+    padding: 10px;
     flex-direction: column;
     justify-content: center;
     border-radius: 30px;
-    background-color: bisque;
-    background-color: khaki;
+    border-radius: 50px;
+    background: #8c80ac;
+    box-shadow: 20px 20px 60px #534c66, -20px -20px 60px #a193c6;
 }
 
-#logo {
-    position: absolute;
-    left: 2%;
-}
-
-#logo path:nth-child(1) {
-    stroke-dasharray: 171.49754333496094px;
-}
-
-#logo path:nth-child(2) {
-    stroke-dasharray: 156.157470703125px;
-}
-
-#logo path:nth-child(3) {
-    stroke-dasharray: 170.24026489257812px;
-}
-
-#logo path:nth-child(4) {
-    stroke-dasharray: 176.58029174804688px;
-}
-
-#logo path:nth-child(5) {
-    stroke-dasharray: 161.0999755859375px;
-}
-
-#logo path:nth-child(6) {
-    stroke-dasharray: 262.1272888183594px;
-}
-
-#logo path:nth-child(7) {
-    stroke-dasharray: 196.51107788085938px;
-}
-
-#logo path:nth-child(8) {
-    stroke-dasharray: 209.88986206054688px;
-}
-
-#logo path:nth-child(9) {
-    stroke-dasharray: 171.49789428710938px;
-}
-
-#logo path:nth-child(10) {
-    stroke-dasharray: 116.89999389648438px;
-}
-
-#logo path:nth-child(11) {
-    stroke-dasharray: 161.09991455078125px;
-}
-
-#logo path:nth-child(12) {
-    stroke-dasharray: 190.64804077148438px;
-}
-
-#logo path:nth-child(13) {
-    stroke-dasharray: 171.49803161621094px;
+.name,
+.email {
+    margin: 20px;
+    display: flex;
+    padding: 10px;
+    width: 75%;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+    border-radius: 50px;
+    background: #ac8080;
+    box-shadow: 20px 20px 60px #292633, -20px -20px 60px #a193c6;
 }
 
 .controls {
-    width: 25%;
+    width: max-content;
     position: relative;
+    right: 10%;
     height: 50px;
+    position: fixed;
     overflow: hidden;
 }
 
@@ -130,7 +145,7 @@ body {
     font-size: 20px;
     outline: none;
     background-color: rgba(255, 255, 255, 0);
-    color: #595f6e;
+    color: #ffffff;
     bottom: 0px;
 }
 
@@ -144,7 +159,8 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    border-bottom: 1px solid #000;
+    color: white;
+    border-bottom: 1px solid rgb(255, 255, 255);
     /* background: blue; */
 }
 
@@ -156,6 +172,7 @@ body {
     height: 100%;
     width: 100%;
     border-bottom: 3px solid #5fa8d3;
+    border-bottom: 2px solid red;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
 }
@@ -169,12 +186,125 @@ body {
 
 .controls input:focus+.label-1 .content,
 .controls input:not(:placeholder-shown)+.label-1 .content {
-    transform: translateY(-130%);
+    transform: translateY(-140%);
     font-size: 12px;
     color: #5fa8d3;
+    color: red;
 }
 
 .controls input:focus+.label-1::after,
 .controls input:not(:placeholder-shown)+.label-1::after {
     transform: translateX(0%);
+}
+
+@media only screen and (max-width: 841px) {
+    /* For mobile phones: */
+    .container {
+        width: max-content;
+    }
+}
+
+#logo {
+    position: absolute;
+    left: 2%;
+    display: grid;
+    /* flex-direction: column; */
+    grid-template-rows: 50vh;
+    animation: fill 0.5s ease forwards 4.1s;
+    top: 25%;
+    justify-content: center;
+    text-shadow: none;
+}
+
+#logo path:nth-child(1) {
+    stroke-dasharray: 171.49754333496094px;
+    stroke-dashoffset: 171.49754333496094px;
+    animation: line 2s ease forwards;
+}
+
+#logo path:nth-child(2) {
+    stroke-dasharray: 156.157470703125px;
+    stroke-dashoffset: 156.157470703125px;
+    animation: line 2s ease forwards 0.2s;
+}
+
+#logo path:nth-child(3) {
+    stroke-dasharray: 170.24026489257812px;
+    stroke-dashoffset: 170.24026489257812px;
+    animation: line 2s ease forwards 0.4s;
+}
+
+#logo path:nth-child(4) {
+    stroke-dasharray: 176.58029174804688px;
+    stroke-dashoffset: 176.58029174804688px;
+    animation: line 2s ease forwards 0.6s;
+}
+
+#logo path:nth-child(5) {
+    stroke-dasharray: 161.0999755859375px;
+    stroke-dashoffset: 161.0999755859375px;
+    animation: line 2s ease forwards 0.8s;
+}
+
+#logo path:nth-child(6) {
+    stroke-dasharray: 262.1272888183594px;
+    stroke-dashoffset: 262.1272888183594px;
+    animation: line 2s ease forwards 1.2s;
+}
+
+#logo path:nth-child(7) {
+    stroke-dasharray: 196.51107788085938px;
+    stroke-dashoffset: 196.51107788085938px;
+    animation: line 2s ease forwards 1.4s;
+}
+
+#logo path:nth-child(8) {
+    stroke-dasharray: 209.88986206054688px;
+    stroke-dashoffset: 209.88986206054688px;
+    animation: line 2s ease forwards 1.6s;
+}
+
+#logo path:nth-child(9) {
+    stroke-dasharray: 171.49789428710938px;
+    stroke-dashoffset: 171.49789428710938px;
+    animation: line 2s ease forwards 1.8s;
+}
+
+#logo path:nth-child(10) {
+    stroke-dasharray: 116.89999389648438px;
+    stroke-dashoffset: 116.89999389648438px;
+    animation: line 2s ease forwards 2s;
+}
+
+#logo path:nth-child(11) {
+    stroke-dasharray: 161.09991455078125px;
+    stroke-dashoffset: 161.09991455078125px;
+    animation: line 2s ease forwards 2.2s;
+}
+
+#logo path:nth-child(12) {
+    stroke-dasharray: 190.64804077148438px;
+    stroke-dashoffset: 190.64804077148438px;
+    animation: line 2s ease forwards 2.4s;
+}
+
+#logo path:nth-child(13) {
+    stroke-dasharray: 171.49803161621094px;
+    stroke-dashoffset: 171.49803161621094px;
+    animation: line 2s ease forwards 2.6s;
+}
+
+@keyframes line {
+    to {
+        stroke-dashoffset: 0px;
+    }
+}
+
+@keyframes fill {
+    from {
+        fill: transparent;
+    }
+    to {
+        fill: rgb(255, 255, 255);
+    }
 }
