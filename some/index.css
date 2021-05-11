@@ -2,45 +2,36 @@
 * {
     margin: 0px;
     padding: 0px;
-    /* background-color: blue; */
     box-sizing: border-box;
 }
 
 body {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    /* justify-items: space-between; */
-    /* height: 100%; */
+    width: 100vw;
 }
 
 .heading {
     padding-bottom: 10px;
     display: flex;
-    width: 100%;
+    width: 100vw;
     height: 70px;
     flex-direction: row;
     justify-content: space-between;
     position: relative;
-    /* align-items: center; */
-    /* grid-template-columns: 50% 50%; */
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     font-size: x-large;
     font-weight: bolder;
     font-variant: small-caps;
     background-color: aquamarine;
     color: black;
     top: 0px;
-    width: 100%;
-    background: rgba( 255, 255, 255, 0.3);
-    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37); */
-    backdrop-filter: blur( 4px);
 }
 
 .container {
     display: grid;
     padding-top: 20px;
     padding-bottom: 20px;
+    width: 100vw;
     justify-content: space-evenly;
     align-content: center;
     grid-template-rows: repeat(5, 400px);
@@ -50,13 +41,11 @@ body {
     background: #8c80ac;
     background-image: url("./qL9wz.png");
     background-image: url("./pngtree-rocket-starry-sky-tiled-background-image_498050.jpg");
-    /* background-color: #094b65; */
-    /* position: sticky; */
-    /* background-image: radial-gradient(red, blue, green, pink) */
 }
 
 .back {
     position: fixed;
+    width: 100%;
 }
 
 .profile {
@@ -153,7 +142,6 @@ body {
     pointer-events: none;
     color: white;
     border-bottom: 1px solid rgb(255, 255, 255);
-    /* background: blue; */
 }
 
 .controls label::after {
@@ -190,7 +178,6 @@ body {
 }
 
 @media only screen and (max-width: 841px) {
-    /* For mobile phones: */
     .container {
         width: max-content;
     }
