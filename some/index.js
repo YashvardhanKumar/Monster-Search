@@ -1,12 +1,17 @@
 const container = document.querySelector(".container");
 const input = document.querySelector("input");
 const button = document.querySelector(".button");
+const heading = document.querySelector(".heading");
 let user = [];
+window.addEventListener('scroll', () => {
+    let value = window.scrollY;
+})
 const createProfile = (array) => {
     container.innerHTML = "";
     array.forEach((obj) => {
         const profile = document.createElement("div");
         profile.classList.add("profile");
+        profile.setAttribute("data-aos", "fade-up")
         profile.innerHTML = `<div class="name">Name</div>
         <div class="name-content">${obj.username}</div>
         <div class="email">Email</div>
